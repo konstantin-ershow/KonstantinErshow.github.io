@@ -1,2 +1,2 @@
-# KonstantinErshow.github.io
+# Konstantin Ershow
 Мой первый опубликованный сайт
