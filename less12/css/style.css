@@ -1,0 +1,101 @@
+* {
+	box-sizing: border-box; /*чтобы не мешали внутренние отступы*/
+}
+body {
+	font-family: Tahoma, sans-serif;
+	line-height: 1.5; /*межстрочный интервал*/
+	color:#333333;
+}
+
+
+.section {
+	padding: 30px 10%; /*отступы сверху 30 пискселей а по краям 10% (видео например, чтобы не прилипало к краям)*/
+}
+.header {
+	margin-top: 80px; /*отступ заголовков от верха*/
+	font-size: 24px;
+	text-align: center;
+}
+
+.header span {
+	
+	font-weight: 400; /*тонкий шрифт*/
+	display:block; /* из теории про блочные элементы*/
+}
+
+.header strong {
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.main {
+	margin-top: 80px; /*отступ секции мэйн (видео и форма) от заголовков*/
+	text-align: center; /*потому что все влево кренились*/
+}
+
+.video, .form {
+	display: inline-block; /*блок с видео должен стать строчно-блочным, чтобы форма не уехала, форма тоже должна быть строчно-блочной*/
+	/*border: 2px solid red; чтобы видеть границы блоков*/
+	vertical-align: top; /*вертикальное выравнивание блоков по верхней линии, боттом по умолчанию */
+}
+
+.form {
+	margin-left: 30px; /*отодвигаем форму от видео влево на 30 пкс*/
+	border: 5px solid #2727d9;
+	padding: 20px; /*отступ внутри от рамки по 20 пикселей со всез сторон*/
+	text-align: center; /*кнопка строчная и выравнивается как текст, выровняли все по центру, чтобы кнопка тоже выровнялась по цетру в блоке с е-мэйлом*/
+}
+.form-header {
+	text-align: center;
+	font-style:20px;
+	font-weight: 900;
+	margin-bottom: 20px; /*отступ снизу*/
+}
+.form input {
+	display: block;  /*строчные надо поправить, чтобы не слепились в одной строке*/
+	margin-top: 10px; /*отступы между инпутами*/
+	width: 300px; /*ширина инпутов*/
+	padding: 15px; /*отступ текста внутри*/
+	border: 1px solid #333;
+	font-style: 18px;
+}
+
+.btn {
+font-style: 18px;
+font-weight: 900;
+background-color: #2727d9;	
+color:#fff;
+border: none;
+width: 300px;
+height: 60px;
+display: block;
+margin: 11px auto; /*сверху-снизу 11 пикс а по краям автоматически*/
+
+}
+
+.col {
+
+	display: inline-block;
+	text-align: center;
+	margin: 10px 30px;
+}
+
+.col img {
+	height: 71px;
+
+}
+
+.feature-header {
+
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 24px;
+}
+
+.feature {
+	text-align: center; /*все по центру картинки и подписи к ним*/
+	 margin: 60px auto;/*отступ между ПОЧЕМУ... и причинами с картинками 60 пикселей верх/низ и автоматически слева/справа */
+	
+}
+
