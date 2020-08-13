@@ -1,0 +1,294 @@
+/*шрифты*/
+
+@font-face {
+    font-family: 'ProximaNova_reg';
+    src: url('../fonts/ProximaNova-Regular.eot');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Regular.woff') format('woff'),
+        url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
+        url('../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ProximaNova_bold';
+    src: url('../fonts/ProximaNova-Bold.eot');
+    src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Bold.woff') format('woff'),
+        url('../fonts/ProximaNova-Bold.ttf') format('truetype'),
+        url('../fonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.reg() {
+	font-family: 'ProximaNova_reg', sans-serif;
+}
+
+.bold() {
+	font-family: 'ProximaNova_bold', sans-serif;
+}
+
+/*описываем цвета которые мы исп*/
+
+@btn-color: #fdb303;
+@icons-color: #46b814;
+@color-text: #1a1820;
+@danger: #ff0000;
+@bg-light: #f5f5f5;
+@light: #fff;
+@text: #1f1619;
+@border-input: #dddddd;
+/*Базовые настройки - тело документа, обводки, кнопки  - можно юзать как сниппет*/
+html {
+	font-size: 10px;
+}
+body {
+	.reg();
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+button, input, a {
+	&:focus{
+		outline: none; /*в неекоторых браузерах - может появиться обводка при нажатии, избавляемся от этого для ссылок, кнопок и инпутов*/
+	}
+}
+.button {
+
+	/*отступ текста кнопки от краев*/
+	padding: 1rem 2rem;
+	border-radius: 8px;
+	font-size: 1.2rem;
+	background-color: @btn-color;
+	color:@light;
+	text-transform: uppercase;
+	border:none;
+	transition: all 0.2s; /*переход для всего за 0.2 с*/
+	&:hover {
+		cursor: pointer;
+		background-color: darken(@btn-color, 5%)
+
+	}
+}
+/*Типографика - заголовки и прочее*/
+section {
+	padding: 10rem 0; /* отсутпы у каждой секции по 10 рэм, для html задано 10 px фонт-сайз, значит 10 рэм = 100 пкс*/
+
+}
+
+
+/* main блок*/
+.main {
+	padding: 3rem 0 5rem;
+	background: #fff url(../img/main-bg.jpg) center center no-repeat;
+	background-size: cover; /*???*/
+	&-content {
+		margin-top: 10rem;
+		/*главный заголовок*/
+		h1 {
+			margin-top: 0;
+			margin-bottom: 4rem;
+			.bold();
+			font-size: 4rem;
+			line-height: 1.45;
+			text-transform: uppercase;
+		}
+	}
+	&-subtitle {
+		margin-bottom: 4rem;
+		font-size: 2.4rem;
+	}
+
+	span {
+		display: inline-block;
+		padding:3rem 5rem;
+		font-size: 1.8rem;
+		color: @light;
+		background-color: @icons-color;
+
+		/*300 рублей надпись*/
+		strong {
+			font-size: 3rem;
+			.bold();
+		}
+	}
+
+/*оплата по факту*/
+	&-trigger {
+		display: block;
+		margin-top: 3rem;
+		font-size: 2.2rem;
+		text-transform: uppercase;
+		.bold();
+
+	}
+	/*главная форма*/
+	&-form {
+		padding:4rem 5rem;
+		background-color:@light;
+		text-align: center;
+		/*заголовок формы*/
+		&-header {
+			margin-bottom: 4rem;
+			font-size: 1.8rem;
+			text-align: center;
+			strong {
+				font-size: 1.9rem;
+			}
+		}
+		/*поля ввода*/
+		&-input {
+			display: block;
+			margin: 2rem 0;
+			width:100%;
+			border: 1px solid @border-input;
+			padding: 1.5rem;
+		}
+
+		/*labelы к полям*/
+		label {
+			position: absolute; /*на эти лейблы остальные элементы не обращают внимания, они выпали из потока */
+			display: inline-block;
+			left: 50%;  /*мы их отталкиваем слева на 50 процентов*/
+		
+			transform: translateX(-50%) translateY(-50%); /*перемещение на 50%*/
+			padding: 0.5rem;
+			font-size: 1.3rem;
+			background-color: @light;
+		}
+		/*кнопка отправить заявку*/
+		&-btn {
+			display: block;
+			width: 100%;
+			height: 5.5rem;
+			font-size: 1.6rem;
+		}
+		/*подпись под формой*/
+		small {
+			display: block;
+			margin-top: 1.5rem;
+		}
+	}
+}
+
+
+.wrap {     /*мб cниппетом, автовыравнивания по центру  врэп - обертка, и внутри этого блока все выравнивается по серединке*/
+	display:table; /*он как таблица*/
+	width: 100%;
+	height: 7rem;
+	&-block {
+		text-align: right;
+		display:table-cell;
+		vertical-align: middle;
+	}
+}
+.phone {
+	&-block {
+		text-align: right;
+	}
+&-link {
+	display: inline-block;
+	.bold();
+	font-weight: 900;
+	font-size: 2rem;
+	height: 7rem; /*2*/
+	line-height: 7rem; /*3 - такая штука прокатывает только если в выравниваемом по одной линии с логотипом элементе одна строка!*/
+	color:@text;
+}
+}
+
+
+/*Оформление секции с преимуществами*/
+.features {
+	&-block {
+		text-align: center;
+		h3 {
+			font-size: 2rem;
+			.bold();
+			margin-bottom: 3rem;
+		} 
+		p {
+			display: inline-block;
+			width: 80%;
+			font-size: 1.4rem;
+		}
+	}
+
+	&-img {
+		height: 8rem;
+		margin-bottom: 3rem;
+		img{
+		display: block;
+		margin: 0 auto;
+	}
+	}
+}
+
+.slick-active {
+	outline:none;
+}
+
+
+.arrow {
+
+	top:50%;
+
+	transform: scaleY(-50%);
+	position: absolute;
+	z-index: 99;
+
+	width: 2rem;
+	height: 2rem;
+	//border: none;
+
+}
+
+.prev {
+	background: url(../img/left-arrow.svg) center no-repeat;
+	left:0;
+	background-size: 70%
+}
+.next {
+	background: url(../img/left-arrow.svg) center no-repeat;
+	right:0;
+	background-size: 70%
+}
+.section-header {
+	text-align: center;
+	margin: 2rem 0 10rem;
+	.bold();
+	font-size: 3.6rem;
+
+}
+
+@media (max-width: 991px) {
+	.main {
+		background-position: top right;
+	}
+	.phone-block {
+		text-align: center;
+	}
+	.main-content  {
+		margin-top: 3rem;
+	}
+	.main-title {
+		text-align: center;
+	}
+}
+
+@media (max-width: 767px) {
+	.header {
+		text-align: center;
+	}
+	.wrap-block {
+		text-align: center;
+	}
+}
