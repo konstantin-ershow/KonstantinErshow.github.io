@@ -172,6 +172,56 @@ section {
   /*3 - такая штука прокатывает только если в выравниваемом по одной линии с логотипом элементе одна строка!*/
   color: #1f1619;
 }
+/*Оформление секции с преимуществами*/
+.features-block {
+  text-align: center;
+}
+.features-block h3 {
+  font-size: 2rem;
+  font-family: 'ProximaNova_bold', sans-serif;
+  margin-bottom: 3rem;
+}
+.features-block p {
+  display: inline-block;
+  width: 80%;
+  font-size: 1.4rem;
+}
+.features-img {
+  height: 8rem;
+  margin-bottom: 3rem;
+}
+.features-img img {
+  display: block;
+  margin: 0 auto;
+}
+.slick-active {
+  outline: none;
+}
+.arrow {
+  top: 50%;
+  -webkit-transform: scaleY(-50%);
+          transform: scaleY(-50%);
+  position: absolute;
+  z-index: 99;
+  width: 2rem;
+  height: 2rem;
+}
+.prev {
+  background: url(../img/left-arrow.svg) center no-repeat;
+  left: 0;
+  background-size: 70%;
+}
+.next {
+  background: url(../img/left-arrow.svg) center no-repeat;
+  right: 0;
+  background-size: 70%;
+}
+.section-header {
+  text-align: center;
+  margin: 2rem 0 10rem;
+  font-family: 'ProximaNova_bold', sans-serif;
+  font-size: 3.6rem;
+}
 @media (max-width: 991px) {
   .main {
     background-position: top right;

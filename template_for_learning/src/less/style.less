@@ -205,6 +205,70 @@ section {
 }
 }
 
+
+/*Оформление секции с преимуществами*/
+.features {
+	&-block {
+		text-align: center;
+		h3 {
+			font-size: 2rem;
+			.bold();
+			margin-bottom: 3rem;
+		} 
+		p {
+			display: inline-block;
+			width: 80%;
+			font-size: 1.4rem;
+		}
+	}
+
+	&-img {
+		height: 8rem;
+		margin-bottom: 3rem;
+		img{
+		display: block;
+		margin: 0 auto;
+	}
+	}
+}
+
+.slick-active {
+	outline:none;
+}
+
+
+.arrow {
+
+	top:50%;
+
+	transform: scaleY(-50%);
+	position: absolute;
+	z-index: 99;
+
+	width: 2rem;
+	height: 2rem;
+	//border: none;
+
+}
+
+.prev {
+	background: url(../img/left-arrow.svg) center no-repeat;
+	left:0;
+	background-size: 70%
+}
+.next {
+	background: url(../img/left-arrow.svg) center no-repeat;
+	right:0;
+	background-size: 70%
+}
+.section-header {
+	text-align: center;
+	margin: 2rem 0 10rem;
+	.bold();
+	font-size: 3.6rem;
+
+}
+
 @media (max-width: 991px) {
 	.main {
 		background-position: top right;
