@@ -3,8 +3,7 @@
 # Константин Ершов
 
 # Python
-1. [Рендеринг 3D-модели (мини-opengl своими руками)] (https://github.com/KonstantinErshow/python_3d_rendering "Учебный проект: использование numpy, matplotlib")
-
+1. [Рендеринг 3D-модели (мини-opengl своими руками)]( https://github.com/KonstantinErshow/python_3d_rendering "Учебный проект: использование numpy, matplotlib")  
 
 
 # HTML - верстка
