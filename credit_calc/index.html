@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+<div class="container">
+	<div class="row"><h1>Кредитный калькулятор</h1></div>
+<div class="row">
+	<div class="col-md-5 md-offset-2">
+ <form name="form">
+   <p><b>Выберите вид платежа</b></p>
+   
+    <p>Введите сумму кредита <input name="creditSum" type="text"></p>
+    <p>Введите срок в месяцах<input name="months" type="text"></p>
+    <p>Введите годовую %-ставку<input name="percent" type="text"></p>
+    <p><input type="button" value="Посчитать (аннуитетный)" onclick="btnClickAnn()"></p>
+    <p><input type="button" value="Посчитать (дифференцированный)" onclick="btnClickDiff()"></p>
+  </form> 
+  </div>
+  <div class="col-md-7">
+  	<div class="result" id="resultDiv">
+  	
+  </div>
+  </div>
+  
+</div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
