@@ -40,21 +40,26 @@ function btnClickDiff(){
 	let months = parseInt(document.form.months.value, 10);
 	let percentStr = (document.form.percent.value).replace(/,/,'.');
 
-            let percent = parseFloat(percentStr, 10);
-            let creditSum = parseFloat(document.form.creditSum.value, 10)
+    let percent = parseFloat(percentStr, 10);
+    let creditSum = parseFloat(document.form.creditSum.value, 10)
             
 	//дифференцированный
 	const resultDiv = document.getElementById("resultDiv");
-            	resultDiv.innerHTML = '';
-            	const platezj = creditSum/months;
-            	let sum=0;
-            	for (let i=0; i<months; i++) {
-            		let montly = ((creditSum - platezj*i)*percent*31)/(365*100);
-            		sum+=montly+platezj;
+    resultDiv.innerHTML = '';
+    const platezj = creditSum/months;
+    
+    let percentsM = ((creditSum*percent)/1200);
+    let sum=percentsM+platezj;
+    let ostat = creditSum - platezj;
+    for (let i=0; i<months; i++) {
+       
+        resultDiv.innerHTML +="<HR>"+ String(i+1)+
+                " месяц: процент " + String(percentsM.toFixed(2)) + " платеж="+String(platezj.toFixed(2))+" Итого за месяц:"+String((platezj+percentsM).toFixed(2))+" Остаток: "+String(ostat.toFixed(2));
+        percentsM = ((ostat*percent)/1200);
+        ostat = ostat - platezj;
+        sum += percentsM+platezj;
 
-            		resultDiv.innerHTML +="<HR>"+ String(i+1)+
-                " месяц: процентное " + String(montly.toFixed(2)) + " платеж="+String(platezj.toFixed(2))+" Итого за месяц:"+String((platezj+montly).toFixed(2));
-            	}
+    }
 
             	resultDiv.innerHTML +="<HR> Переплата:" + String((sum-creditSum).toFixed(2));
             	resultDiv.innerHTML +="<HR> Итого:" + String((sum).toFixed(2));
